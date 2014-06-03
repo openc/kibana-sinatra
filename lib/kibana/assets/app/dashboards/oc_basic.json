@@ -61,9 +61,6 @@
             "font-size": "9pt"
           },
           "overflow": "min-height",
-          // This gets eval'ed so needs to be in the form:
-          // fieldnames=%22amount%22,%22name%22 etc.
-          // where %22 is the char for "
           "fields": [{{ ARGS.fieldnames }}],
           "highlight": [],
           "sortable": true,
