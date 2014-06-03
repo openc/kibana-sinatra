@@ -1,5 +1,5 @@
 {
-  "title": "Your Basic Dashboard",
+  "title": "OpenCorporates Data Browser",
   "services": {
     "query": {
       "list": {
@@ -61,7 +61,10 @@
             "font-size": "9pt"
           },
           "overflow": "min-height",
-          "fields": [],
+          // This gets eval'ed so needs to be in the form:
+          // fieldnames=%22amount%22,%22name%22 etc.
+          // where %22 is the char for "
+          "fields": [{{ ARGS.fieldnames }}],
           "highlight": [],
           "sortable": true,
           "header": true,
@@ -98,17 +101,17 @@
   "panel_hints": true,
   "loader": {
     "save_gist": false,
-    "save_elasticsearch": true,
+    "save_elasticsearch": false,
     "save_local": true,
-    "save_default": true,
+    "save_default": false,
     "save_temp": true,
     "save_temp_ttl_enable": true,
     "save_temp_ttl": "30d",
     "load_gist": true,
-    "load_elasticsearch": true,
+    "load_elasticsearch": false,
     "load_elasticsearch_size": 20,
     "load_local": true,
-    "hide": false
+    "hide": true
   },
   "pulldowns": [
     {
@@ -121,13 +124,13 @@
         "*"
       ],
       "remember": 10,
-      "enable": true
+      "enable": false
     },
     {
       "type": "filtering",
       "collapse": true,
       "notice": true,
-      "enable": true
+      "enable": false
     }
   ],
   "nav": [
@@ -160,7 +163,7 @@
         "1d"
       ],
       "timefield": "@timestamp",
-      "enable": true
+      "enable": false
     }
   ],
   "refresh": false
