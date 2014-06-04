@@ -115,19 +115,19 @@
       "type": "query",
       "collapse": false,
       "notice": false,
-      "query": "*",
+      "query": "{{ARGS.query || '*'}}",
       "pinned": true,
       "history": [
         "*"
       ],
       "remember": 10,
-      "enable": false
+      "enable": true
     },
     {
       "type": "filtering",
       "collapse": true,
       "notice": true,
-      "enable": false
+      "enable": true
     }
   ],
   "nav": [
